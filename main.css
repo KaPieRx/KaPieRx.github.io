@@ -1,0 +1,11 @@
+html
+{
+    background-color: lightblue;
+}
+
+body{
+    color:grey;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: xx-large;
+    text-align: center;
+}
