@@ -165,7 +165,7 @@ p
 {
     grid-area: nazwa;
 }
-.tab > ul
+.rola > ul
 {
     grid-area: zawartosc;
     padding-left: 50px;
