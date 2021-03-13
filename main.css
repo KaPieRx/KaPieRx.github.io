@@ -76,6 +76,7 @@ article
     grid-area: sidebar;
     padding-left: 100px;
     padding-right: 100px;
+    background-color: #24768f;
 }
 
 .glowna
@@ -109,7 +110,7 @@ article
 
 img
 {
-    border-radius: 20%;
+    border-radius: 50%;
     max-width: 100%;
     height: auto;
 }
