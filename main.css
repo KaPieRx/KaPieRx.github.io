@@ -45,7 +45,7 @@ h5
     padding-left: 15px;
 }
 
-.container
+article
 {
     display: grid;
     padding: 50px;
@@ -143,6 +143,7 @@ p
     grid-template-rows: auto;
     grid-gap: 20px;
     grid-template-areas: 
+    "nazwa zawartosc"
     "nazwa zawartosc";
     text-align: left;
     padding-bottom: 13px;
