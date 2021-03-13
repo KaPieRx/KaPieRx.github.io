@@ -45,7 +45,7 @@ h5
     padding-left: 15px;
 }
 
-article
+.container
 {
     display: grid;
     padding: 50px;
@@ -128,7 +128,7 @@ img
 
 .tekst-skladowa > hr
 {
-    border-top: 1px dashed #01031a;
+    border-top: 1px dotted #000000;
 }
 
 p
