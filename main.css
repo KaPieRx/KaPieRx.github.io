@@ -72,26 +72,26 @@ article
     background-color:#47495d;
 }
 
-.dane
+.sidebar
 {
-    grid-area: dane;
+    grid-area: sidebar;
     padding-left: 100px;
     padding-right: 100px;
 }
 
-.tekst
+.glowna
 {
     grid-area: tekst;
     text-align: justify;
 }
 
-.zdjecie
+.zdj
 {
     grid-area: zdjecie;
     margin: auto;
 }
 
-.dane .nazwa-elementu
+.sidebar .nazwa-elementu
 {
     font-size: 20px;
     font-weight: 600;
