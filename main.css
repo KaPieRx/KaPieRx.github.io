@@ -144,7 +144,8 @@ p
     grid-template-rows: auto;
     grid-gap: 20px;
     grid-template-areas: 
-    "nazwa zawartosc";
+    "nazwa zawartosc"
+    "rola zawartosc";
     text-align: left;
     padding-bottom: 13px;
     padding-top: 13px;
@@ -160,9 +161,13 @@ p
     grid-area: zawartosc;
     padding-bottom: 20px;
 }
-
-.rola > ul
+.tab > .rola
 {
+    grid-area: rola;
+}
+.tab > .rola > ul
+{
+    grid-area: zawartosc;
     padding-left: 65px;
 }
 
