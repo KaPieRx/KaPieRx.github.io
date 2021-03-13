@@ -55,9 +55,9 @@ article
     grid-template-areas: 
     "zdjecie header"
     "zdjecie tekst"
-    "dane tekst"
-    "dane tekst"
-    "dane tekst";
+    "sidebar tekst"
+    "sidebar tekst"
+    "sidebar tekst";
     
 }
 
@@ -81,7 +81,7 @@ article
 
 .glowna
 {
-    grid-area: main;
+    grid-area: tekst;
     text-align: justify;
 }
 
