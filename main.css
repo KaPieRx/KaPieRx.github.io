@@ -144,7 +144,7 @@ p
     grid-gap: 20px;
     grid-template-areas: 
     "nazwa zawartosc"
-    "nazwa zawartosc";
+    "nazwa dane";
     text-align: left;
     padding-bottom: 13px;
     padding-top: 13px;
@@ -162,7 +162,7 @@ p
 }
 .tab > .rola
 {
-    grid-area: nazwa;
+    grid-area: dane;
 }
 .rola > ul
 {
