@@ -67,14 +67,14 @@ article
     display: flex;
     flex-direction: column;
     padding-bottom: 30px;
-    color: #e7e8ff;
+    color: #e7f6ff;
     padding: 20px;
-    background-color:#47495d;
+    background-color:#55243d;
 }
 
 .sidebar
 {
-    grid-area: sidebar;
+    grid-area: dane;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -99,7 +99,7 @@ article
 
 .el hr
 {
-    border-top: 1px dashed #01031a;
+    border-top: 1px dashed #0e4a72d0;
 }
 
 .el
