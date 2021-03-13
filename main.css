@@ -74,14 +74,14 @@ article
 
 .sidebar
 {
-    grid-area: dane;
+    grid-area: sidebar;
     padding-left: 100px;
     padding-right: 100px;
 }
 
 .glowna
 {
-    grid-area: tekst;
+    grid-area: main;
     text-align: justify;
 }
 
@@ -152,12 +152,12 @@ p
 
 .tab > .nazwa 
 {
-    grid-area: naz;
+    grid-area: nazwa;
 }
 
 .tab > .szczegoly 
 {
-    grid-area: zawart;
+    grid-area: zawartosc;
     padding-bottom: 20px;
 }
 
