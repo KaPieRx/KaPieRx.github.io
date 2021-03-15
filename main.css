@@ -46,7 +46,7 @@ h5
     padding-left: 15px;
 }
 
-article
+.container
 {
     display: grid;
     padding: 0;
@@ -100,7 +100,7 @@ article
     font-weight: 600;
 }
 
-.el hr
+.el > hr
 {
     border-top: 3px #000000;
 }
