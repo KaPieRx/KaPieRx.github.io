@@ -7,262 +7,274 @@
     <link rel="stylesheet" href="google.css">
     <link rel="stylesheet" href="googleWyniki.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="vue.js" defer></script>
 </head>
 
-<body class="results">
-    <div class="header">
-        <div class="ikony">
-            <div class="grupa">
-                <a class="linki" href="">Gmail</a>
-                <a class="linki" href="">Grafika</a>
-                <div class="menu">
-                    <svg class="kropki" focusable="false" viewBox="0 0 24 24">
-                        <path
-                            d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z">
-                        </path>
-                    </svg>
-                </div>
-                <button class="zalogujsie" type="button" onclick="location.href=''">Zaloguj się</button>
-            </div>
-        </div>
-    </div>
-    <div class="main">
-        <div class="logo">
-            <img class="google" src="logo.png">
-        </div>
-        <div class="wyszukiwanie">
-            <div class="tekst">
-                <div class="visual1">
-                    <img class="lupa" src="lupa.png" title="Szukaj">
-                    <input v-model="googleSearch" type="search" maxlength="2048">
-                    <img class="klaw" src="klawiatura.png" title="Narzędzia do wprowadzania tekstu">
-                    <img class="mikro" src="mikro.png" title="Wyszukiwanie głosowe">
-                </div>
-            </div>
-            <div class="przyciski">
-                <div class="buttons">
-                    <button class="przycisk1" type="button" onclick="location.href=''">Szukaj w Google</button>
-                    <button class="przycisk2" type="button" onclick="location.href=''">Szczęśliwy traf</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="dol">
-        <div class="apki">
-            <svg class="ikonka" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-                <path fill='rgba(0,0,0,.54)'
-                    d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z' />
-            </svg>
-            <a class="ap" href="">Wszystko</a>
-        </div>
-        <div class="apki">
-            <svg focusable="false" width='24' height='24' viewBox="0 0 24 24">
-                <path
-                    d="M12 11h6v2h-6v-2zm-6 6h12v-2H6v2zm0-4h4V7H6v6zm16-7.22v12.44c0 1.54-1.34 2.78-3 2.78H5c-1.64 0-3-1.25-3-2.78V5.78C2 4.26 3.36 3 5 3h14c1.64 0 3 1.25 3 2.78zM19.99 12V5.78c0-.42-.46-.78-1-.78H5c-.54 0-1 .36-1 .78v12.44c0 .42.46.78 1 .78h14c.54 0 1-.36 1-.78V12zM12 9h6V7h-6v2">
-                </path>
-            </svg>
-            <a class="ap" href="">Wiadomości</a>
-        </div>
-        <div class="apki">
-            <svg focusable="false" width='24' height='24' viewBox="0 0 24 24">
-                <path
-                    d="M14 13l4 5H6l4-4 1.79 1.78L14 13zm-6.01-2.99A2 2 0 0 0 8 6a2 2 0 0 0-.01 4.01zM22 5v14a3 3 0 0 1-3 2.99H5c-1.64 0-3-1.36-3-3V5c0-1.64 1.36-3 3-3h14c1.65 0 3 1.36 3 3zm-2.01 0a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h7v-.01h7a1 1 0 0 0 1-1V5">
-                </path>
-            </svg>
-            <a class="ap" href="">Grafika</a>
-        </div>
-        <div class="apki">
-            <svg focusable="false" width='24' height='24' viewBox="0 0 16 16">
-                <path
-                    d="M7.503 0c3.09 0 5.502 2.487 5.502 5.427 0 2.337-1.13 3.694-2.26 5.05-.454.528-.906 1.13-1.358 1.734-.452.603-.754 1.508-.98 1.96-.226.452-.377.829-.904.829-.528 0-.678-.377-.905-.83-.226-.451-.527-1.356-.98-1.959-.452-.603-.904-1.206-1.356-1.734C3.132 9.121 2 7.764 2 5.427 2 2.487 4.412 0 7.503 0zm0 1.364c-2.283 0-4.14 1.822-4.14 4.063 0 1.843.86 2.873 1.946 4.177.468.547.942 1.178 1.4 1.79.34.452.596.99.794 1.444.198-.455.453-.992.793-1.445.459-.61.931-1.242 1.413-1.803 1.074-1.29 1.933-2.32 1.933-4.163 0-2.24-1.858-4.063-4.139-4.063zm0 2.734a1.33 1.33 0 11-.001 2.658 1.33 1.33 0 010-2.658">
-                </path>
-            </svg>
-            <a class="ap" href="">Mapy</a>
-        </div>
-        <div class="apki">
-            <svg focusable="false" width='24' height='24' viewBox="0 0 24 24">
-                <path
-                    d="M10 16.5l6-4.5-6-4.5v9zM5 20h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1zm14.5 2H5a3 3 0 0 1-3-3V4.4A2.4 2.4 0 0 1 4.4 2h15.2A2.4 2.4 0 0 1 22 4.4v15.1a2.5 2.5 0 0 1-2.5 2.5">
-                </path>
-            </svg>
-            <a class="ap" href="">Wideo</a>
-        </div>
-        <div class="apki">
-            <svg focusable="false" width='24' height='24' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z">
-                </path>
-            </svg>
-            <a class="ap" href="">Więcej</a>
-        </div>
-        <div class="apki">
-            <img src="" />
-            <a class="ap" href="">Ustawienia</a>
-        </div>
-        <div class="apki">
-            <img src="" />
-            <a class="ap" href="">Narzędzia</a>
-        </div>
-    </div>
-
-    <div class="ilosc_wynikow">
-        <a>Około 37 600 000 wyników (0,71 s)</a>
-    </div>
-    <div class="zawartosc">
-        <div class="wynik">
-            <div class="naglowek">
-                <div class="hiperlacze">
-                    <div class="adres">
-                        <cite class="link">
-                            context.reverso.net
-                            <span class="rodzaj"> › tłumaczenie › polski-angielski › ja...</span>
-                        </cite>
+<body>
+    <!--siedziałem nad tym 3 godziny i nie udało mi się naprawić tego ucięcia w połowie-->
+    
+    <div id="app" :class="{results: googleSearch.length > 0}">
+        <div class="header">
+            <div class="ikony">
+                <div class="grupa">
+                    <a class="linki" href="">Gmail</a>
+                    <a class="linki" href="">Grafika</a>
+                    <div class="menu">
+                        <!--A nad tymi svg kombinowałem dlaczego się nie wyświetlają przez ponad 2 godziny i również bez skutku :)))-->
+                        <svg class="kropki" focusable="false" viewBox="0 0 24 24">
+                            <path
+                                d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z">
+                            </path>
+                        </svg>
                     </div>
-                    <a class="tytul" href="">jakiś wynik - Tłumaczenie na angielski - polskich przykładów ...</a>
+                    <button class="zalogujsie" type="button" onclick="location.href=''">Zaloguj się</button>
                 </div>
             </div>
-
-            <div class="streszczenie">
-                <span class="opis">
-                    Tłumaczenia w kontekście hasła "jakiś wynik" z polskiego na angielski od Reverso Context:
-                    Subs Zderzak - Bump subs, aby osiągnąć jakiś wynik.
-                </span>
-            </div>
         </div>
-        <div class="wynik">
-            <div class="naglowek">
-                <div class="hiperlacze">
-                    <div class="adres">
-                        <cite class="link">
-                            pl.wiktionary.org
-                            <span class="rodzaj"> › wiki › wynik</span>
-                        </cite>
+        <div class="main">
+            <div class="logo">
+                <img class="google" src="logo.png">
+            </div>
+            <div class="wyszukiwanie">
+                <div class="tekst">
+                    <div class="visual1">
+                        <img class="lupa" src="lupa.png" title="Szukaj">
+                        <input v-model="googleSearch" type="search" maxlength="2048">
+                        <img class="klaw" src="klawiatura.png" title="Narzędzia do wprowadzania tekstu">
+                        <img class="mikro" src="mikro.png" title="Wyszukiwanie głosowe">
                     </div>
-                    <a class="tytul" href="">wynik – Wikisłownik, wolny słownik wielojęzyczny</a>
                 </div>
-            </div>
-
-            <div class="streszczenie">
-                <span class="opis">
-                    przykłady: (1.2) Tylko 7 jest wynikiem tego działania. (1.3) Jaki jest wynik? Nadal remis 0:0?
-                    (1.3) Pijany komentator przegapił bramkę dla Polski i do końca ...
-                </span>
-            </div>
-        </div>
-        <div class="wynik">
-            <div class="naglowek">
-                <div class="hiperlacze">
-                    <div class="adres">
-                        <cite class="link">
-                            wyniki.diag.pl
-                            <span class="rodzaj"> › help</span>
-                        </cite>
+                <div class="przyciski">
+                    <div class="buttons">
+                        <button class="przycisk1" type="button" onclick="location.href=''">Szukaj w Google</button>
+                        <button class="przycisk2" type="button" onclick="location.href=''">Szczęśliwy traf</button>
                     </div>
-                    <a class="tytul" href="">Twoje wyniki - Diagnostyka</a>
                 </div>
             </div>
-
-            <div class="streszczenie">
-                <span class="opis">
-                    W jaki sposób aktywować usługę powiadomień na Koncie Stałego Klienta? Zaloguj się do swojego
-                    Konta. Kliknij w zakładkę Moje dane na górze strony.
-                </span>
+        </div>
+        <div class="dol">
+            <div class="apki">
+                <svg class="ikonka" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+                    <path fill='rgba(0,0,0,.54)'
+                        d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z' />
+                </svg>
+                <a class="ap" href="">Wszystko</a>
+            </div>
+            <div class="apki">
+                <svg focusable="false" width='24' height='24' viewBox="0 0 24 24">
+                    <path
+                        d="M12 11h6v2h-6v-2zm-6 6h12v-2H6v2zm0-4h4V7H6v6zm16-7.22v12.44c0 1.54-1.34 2.78-3 2.78H5c-1.64 0-3-1.25-3-2.78V5.78C2 4.26 3.36 3 5 3h14c1.64 0 3 1.25 3 2.78zM19.99 12V5.78c0-.42-.46-.78-1-.78H5c-.54 0-1 .36-1 .78v12.44c0 .42.46.78 1 .78h14c.54 0 1-.36 1-.78V12zM12 9h6V7h-6v2">
+                    </path>
+                </svg>
+                <a class="ap" href="">Wiadomości</a>
+            </div>
+            <div class="apki">
+                <svg focusable="false" width='24' height='24' viewBox="0 0 24 24">
+                    <path
+                        d="M14 13l4 5H6l4-4 1.79 1.78L14 13zm-6.01-2.99A2 2 0 0 0 8 6a2 2 0 0 0-.01 4.01zM22 5v14a3 3 0 0 1-3 2.99H5c-1.64 0-3-1.36-3-3V5c0-1.64 1.36-3 3-3h14c1.65 0 3 1.36 3 3zm-2.01 0a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h7v-.01h7a1 1 0 0 0 1-1V5">
+                    </path>
+                </svg>
+                <a class="ap" href="">Grafika</a>
+            </div>
+            <div class="apki">
+                <svg focusable="false" width='24' height='24' viewBox="0 0 16 16">
+                    <path
+                        d="M7.503 0c3.09 0 5.502 2.487 5.502 5.427 0 2.337-1.13 3.694-2.26 5.05-.454.528-.906 1.13-1.358 1.734-.452.603-.754 1.508-.98 1.96-.226.452-.377.829-.904.829-.528 0-.678-.377-.905-.83-.226-.451-.527-1.356-.98-1.959-.452-.603-.904-1.206-1.356-1.734C3.132 9.121 2 7.764 2 5.427 2 2.487 4.412 0 7.503 0zm0 1.364c-2.283 0-4.14 1.822-4.14 4.063 0 1.843.86 2.873 1.946 4.177.468.547.942 1.178 1.4 1.79.34.452.596.99.794 1.444.198-.455.453-.992.793-1.445.459-.61.931-1.242 1.413-1.803 1.074-1.29 1.933-2.32 1.933-4.163 0-2.24-1.858-4.063-4.139-4.063zm0 2.734a1.33 1.33 0 11-.001 2.658 1.33 1.33 0 010-2.658">
+                    </path>
+                </svg>
+                <a class="ap" href="">Mapy</a>
+            </div>
+            <div class="apki">
+                <svg focusable="false" width='24' height='24' viewBox="0 0 24 24">
+                    <path
+                        d="M10 16.5l6-4.5-6-4.5v9zM5 20h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1zm14.5 2H5a3 3 0 0 1-3-3V4.4A2.4 2.4 0 0 1 4.4 2h15.2A2.4 2.4 0 0 1 22 4.4v15.1a2.5 2.5 0 0 1-2.5 2.5">
+                    </path>
+                </svg>
+                <a class="ap" href="">Wideo</a>
+            </div>
+            <div class="apki">
+                <svg focusable="false" width='24' height='24' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z">
+                    </path>
+                </svg>
+                <a class="ap" href="">Więcej</a>
+            </div>
+            <div class="apki">
+                <img src="" />
+                <a class="ap" href="">Ustawienia</a>
+            </div>
+            <div class="apki">
+                <img src="" />
+                <a class="ap" href="">Narzędzia</a>
             </div>
         </div>
-        <div class="wynik">
-            <div class="naglowek">
-                <div class="hiperlacze">
-                    <div class="adres">
-                        <cite class="link">
-                            eurosport.tvn24.pl
-                            <span class="rodzaj"> › pilka-nozna,105 › polska-andora-...</span>
-                        </cite>
+
+        <div class="ilosc_wynikow">
+            <a>Około 37 600 000 wyników (0,71 s)</a>
+        </div>
+        <div class="zawartosc">
+            <div class="wynik">
+                <div class="naglowek">
+                    <div class="hiperlacze">
+                        <div class="adres">
+                            <cite class="link">
+                                context.reverso.net
+                                <span class="rodzaj"> › tłumaczenie › polski-angielski › ja...</span>
+                            </cite>
+                        </div>
+                        <a class="tytul" href="">jakiś wynik - Tłumaczenie na angielski - polskich przykładów ...</a>
                     </div>
-                    <a class="tytul" href="">Polska - Andora: wynik na żywo i relacja live - Eliminacje MŚ ...</a>
+                </div>
+
+                <div class="streszczenie">
+                    <span class="opis">
+                        Tłumaczenia w kontekście hasła "jakiś wynik" z polskiego na angielski od Reverso Context:
+                        Subs Zderzak - Bump subs, aby osiągnąć jakiś wynik.
+                    </span>
                 </div>
             </div>
-
-            <div class="streszczenie">
-                <span class="opis">
-                    Każdy inny wynik niż okazałe zwycięstwo Polski będzie w niedzielę... czytaj dalej » ...
-                    &quot;Miała być zabawa, a był jakiś koszmar&quot;.
-                </span>
-            </div>
-        </div>
-        <div class="wynik">
-            <div class="naglowek">
-                <div class="hiperlacze">
-                    <div class="adres">
-                        <cite class="link">
-                            www.gov.pl
-                            <span class="rodzaj"> › web › koronawirus › powiadomienia-sm...</span>
-                        </cite>
+            <div class="wynik">
+                <div class="naglowek">
+                    <div class="hiperlacze">
+                        <div class="adres">
+                            <cite class="link">
+                                pl.wiktionary.org
+                                <span class="rodzaj"> › wiki › wynik</span>
+                            </cite>
+                        </div>
+                        <a class="tytul" href="">wynik – Wikisłownik, wolny słownik wielojęzyczny</a>
                     </div>
-                    <a class="tytul" href="">Powiadomienia SMS o wyniku testu na COVID-19. Zajrzyj na ...</a>
+                </div>
+
+                <div class="streszczenie">
+                    <span class="opis">
+                        przykłady: (1.2) Tylko 7 jest wynikiem tego działania. (1.3) Jaki jest wynik? Nadal remis 0:0?
+                        (1.3) Pijany komentator przegapił bramkę dla Polski i do końca ...
+                    </span>
                 </div>
             </div>
-
-            <div class="streszczenie">
-                <span class="opis">
-                    Jeśli korzystasz z IKP i uzupełniłeś na koncie swój nr telefonu komórkowego – zaraz po tym, jak
-                    w systemie EWP pojawi się wynik Twojego testu ...
-                </span>
-            </div>
-        </div>
-        <div class="wynik">
-            <div class="naglowek">
-                <div class="hiperlacze">
-                    <div class="adres">
-                        <cite class="link">
-                            genxone.eu
-                            <span class="rodzaj"> › informacje-dla-pacjentow-ze-skierowanie...</span>
-                        </cite>
+            <div class="wynik">
+                <div class="naglowek">
+                    <div class="hiperlacze">
+                        <div class="adres">
+                            <cite class="link">
+                                wyniki.diag.pl
+                                <span class="rodzaj"> › help</span>
+                            </cite>
+                        </div>
+                        <a class="tytul" href="">Twoje wyniki - Diagnostyka</a>
                     </div>
-                    <a class="tytul" href="">Dla Pacjenta ze skierowaniem z NFZ na test | COVID-19 ...</a>
                 </div>
-            </div>
 
-            <div class="streszczenie">
-                <span class="opis">
-                    Co zabrać ze sobą na wymaz? Osłonę nosa i twarzy oraz dokument ze zdjęciem. Jak długo trzeba
-                    czekać na wynik testu? Wyniki testu są dostępne w ciągu 24 ...
-                </span>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="kraj">Polska</div>
-        <div class="linki_dolne">
-            <div class="prawo">
-                <a class="bottom_text" href="">O nas</a>
-                <a class="bottom_text" href="">Reklamuj się</a>
-                <a class="bottom_text" href="">Dla firm</a>
-                <a class="bottom_text" href="">Jak działa wyszukiwarka</a>
-            </div>
-            <div class="srodek">
-                <div class="neutralnosc">
-                    <img class="listek" src="listek.png">
-                    <a class="bottom_text" href="">Neutralność węglowa od 2007 roku</a>
+                <div class="streszczenie">
+                    <span class="opis">
+                        W jaki sposób aktywować usługę powiadomień na Koncie Stałego Klienta? Zaloguj się do swojego
+                        Konta. Kliknij w zakładkę Moje dane na górze strony.
+                    </span>
                 </div>
             </div>
-            <div class="lewo">
-                <a class="bottom_text" href="">Prywatność</a>
-                <a class="bottom_text" href="">Warunki</a>
-                <a class="bottom_text" href="">Ustawienia</a>
+            <div class="wynik">
+                <div class="naglowek">
+                    <div class="hiperlacze">
+                        <div class="adres">
+                            <cite class="link">
+                                eurosport.tvn24.pl
+                                <span class="rodzaj"> › pilka-nozna,105 › polska-andora-...</span>
+                            </cite>
+                        </div>
+                        <a class="tytul" href="">Polska - Andora: wynik na żywo i relacja live - Eliminacje MŚ ...</a>
+                    </div>
+                </div>
+
+                <div class="streszczenie">
+                    <span class="opis">
+                        Każdy inny wynik niż okazałe zwycięstwo Polski będzie w niedzielę... czytaj dalej » ...
+                        &quot;Miała być zabawa, a był jakiś koszmar&quot;.
+                    </span>
+                </div>
             </div>
-            <div class="wyzej">
-                <a class="bottom_text" href="">Z Twojego adresu internetowego</a>
-                <a class="bottom_text" href="">Użyj dokładnej lokalizacji</a>
-                <a class="bottom_text" href="">Dowiedz się więcej</a>
+            <div class="wynik">
+                <div class="naglowek">
+                    <div class="hiperlacze">
+                        <div class="adres">
+                            <cite class="link">
+                                www.gov.pl
+                                <span class="rodzaj"> › web › koronawirus › powiadomienia-sm...</span>
+                            </cite>
+                        </div>
+                        <a class="tytul" href="">Powiadomienia SMS o wyniku testu na COVID-19. Zajrzyj na ...</a>
+                    </div>
+                </div>
+
+                <div class="streszczenie">
+                    <span class="opis">
+                        Jeśli korzystasz z IKP i uzupełniłeś na koncie swój nr telefonu komórkowego – zaraz po tym, jak
+                        w systemie EWP pojawi się wynik Twojego testu ...
+                    </span>
+                </div>
             </div>
-            <div class="nizej">
-                <a class="bottom_text" href="">Pomoc</a>
-                <a class="bottom_text" href="">Prześlij opinię</a>
-                <a class="bottom_text" href="">Prywatność</a>
-                <a class="bottom_text" href="">Warunki</a>
+            <div class="wynik">
+                <div class="naglowek">
+                    <div class="hiperlacze">
+                        <div class="adres">
+                            <cite class="link">
+                                genxone.eu
+                                <span class="rodzaj"> › informacje-dla-pacjentow-ze-skierowanie...</span>
+                            </cite>
+                        </div>
+                        <a class="tytul" href="">Dla Pacjenta ze skierowaniem z NFZ na test | COVID-19 ...</a>
+                    </div>
+                </div>
+
+                <div class="streszczenie">
+                    <span class="opis">
+                        Co zabrać ze sobą na wymaz? Osłonę nosa i twarzy oraz dokument ze zdjęciem. Jak długo trzeba
+                        czekać na wynik testu? Wyniki testu są dostępne w ciągu 24 ...
+                    </span>
+                </div>
             </div>
         </div>
+        <div class="footer">
+            <div class="kraj">Polska</div>
+            <div class="linki_dolne">
+                <div class="prawo">
+                    <a class="bottom_text" href="">O nas</a>
+                    <a class="bottom_text" href="">Reklamuj się</a>
+                    <a class="bottom_text" href="">Dla firm</a>
+                    <a class="bottom_text" href="">Jak działa wyszukiwarka</a>
+                </div>
+                <div class="srodek">
+                    <div class="neutralnosc">
+                        <img class="listek" src="listek.png">
+                        <a class="bottom_text" href="">Neutralność węglowa od 2007 roku</a>
+                    </div>
+                </div>
+                <div class="lewo">
+                    <a class="bottom_text" href="">Prywatność</a>
+                    <a class="bottom_text" href="">Warunki</a>
+                    <a class="bottom_text" href="">Ustawienia</a>
+                </div>
+                <div class="wyzej">
+                    <a class="bottom_text" href="">Z Twojego adresu internetowego</a>
+                    <a class="bottom_text" href="">Użyj dokładnej lokalizacji</a>
+                    <a class="bottom_text" href="">Dowiedz się więcej</a>
+                </div>
+                <div class="nizej">
+                    <a class="bottom_text" href="">Pomoc</a>
+                    <a class="bottom_text" href="">Prześlij opinię</a>
+                    <a class="bottom_text" href="">Prywatność</a>
+                    <a class="bottom_text" href="">Warunki</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    googleSearch: "",
+                }
+            })
+        </script>
     </div>
 </body>
 

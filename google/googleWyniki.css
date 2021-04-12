@@ -121,6 +121,10 @@
     border-bottom: 1px solid #dfe1e5;
 }
 
+.results .dol svg {
+    height: 17px;
+}
+
 .results .apki
 {
     padding-right: 10px;
