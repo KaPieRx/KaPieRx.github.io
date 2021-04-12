@@ -16,6 +16,11 @@ body
     width: auto;
 }
 
+#app
+{
+    height: 100%;
+}
+
 .dol
 {
     display: none;
@@ -183,6 +188,7 @@ a
     margin: 0 auto;
     width: 450px;
     max-width: 584px;
+    padding-top: 5px;
 }
 
 .visual1
