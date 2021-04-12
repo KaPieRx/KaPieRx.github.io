@@ -4,7 +4,6 @@ html, body
     width: auto;
 }
 
-
 body
 {
     display: flex;
@@ -15,6 +14,31 @@ body
     color: #222;
     margin: 0;
     width: auto;
+}
+
+.dol
+{
+    display: none;
+}
+
+.ilosc_wynikow
+{
+    display: none;
+}
+
+.zawartosc
+{
+    display: none;
+}
+
+.wyzej
+{
+    display: none;
+}
+
+.nizej
+{
+    display: none;
 }
 
 .header
@@ -103,7 +127,7 @@ a
 
 }
 
-img.kropki
+.kropki
 {
     margin: auto;
     height: 20px;
