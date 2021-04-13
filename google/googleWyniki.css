@@ -1,14 +1,13 @@
-.results *
+.results *:not(path)
 {
     all: initial;
     color: #222;
     font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
 }
 
-.results
+div#app.results
 {
     margin: 0;
-    margin-top: 10px;
     max-width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -53,7 +52,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 32px;
+    padding-right: 10px;
     padding-top: 10px;
 }
 
@@ -102,8 +101,8 @@
 
 .results .menu
 {
-    padding-right: 15px;
-    padding-top: 6px;
+    height: 20px;
+    width: 20px;
     cursor: pointer;
 }
 
@@ -121,10 +120,10 @@
     border-bottom: 1px solid #dfe1e5;
 }
 
-.results .dol svg {
+.results svg
+{
     height: 17px;
 }
-
 .results .apki
 {
     padding-right: 10px;
@@ -230,10 +229,11 @@
 
 .results img.klaw
 {
-    padding-left: 15px;
-    padding-right: 18px;
+    margin: auto;
     height: 12px;
-    padding-bottom: 7px;
+    padding-bottom: 10px;
+    padding-right: 18px;
+    padding-left: 18px;
     order: 3;
     cursor: pointer;
 }
@@ -364,4 +364,6 @@
 {
     padding-right: 20px;
     cursor: pointer;
+    font-family: arial,sans-serif;
+    color: #70757a;
 }
