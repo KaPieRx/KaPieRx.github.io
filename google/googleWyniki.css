@@ -20,6 +20,10 @@ div#app.results
     display: none;
 }
 
+.results .lista
+{
+    display: none;;
+}
 .results .przyciski
 {
     display: none;

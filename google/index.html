@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="app" :class="{results: googleSearch.length > 0}">
+    <div id="app" :class="{results: wyszukaj.length > 0}">
         <div class="header">
             <div class="ikony">
                 <div class="grupa">
@@ -33,28 +33,31 @@
                 <img class="google" src="logo.png">
             </div>
             <div class="wyszukiwanie">
-                <div class="tekst">
-                    <div class="visual1">
-                        <img class="lupa" src="lupa.png" title="Szukaj">
-                        <input v-model="googleSearch" type="search" maxlength="2048">
-                        <img class="klaw" src="klawiatura.png" title="Narzędzia do wprowadzania tekstu">
-                        <img class="mikro" src="mikro.png" title="Wyszukiwanie głosowe">
+                <div class="rozwiniety">
+                    <div class="tekst">
+                        <div class="visual1">
+                            <img class="lupa" src="lupa.png" @click="potwierdz" title="Szukaj">
+                            <input v-model="googleSearch" @keyup.enter="potwierdz" type="search">
+                            <img class="klaw" src="klawiatura.png" title="Narzędzia do wprowadzania tekstu">
+                            <img class="mikro" src="mikro.png" title="Wyszukiwanie głosowe">
+                        </div>
+                    </div>
+                    <div class="lista">
+                        <ul v-for="miasto in filtredCities" @click="uzupelnij(miasto)">
+                            <img class="lupa" src="lupa.png" title="Szukaj">
+                            {{googleSearch}}<b>{{ miasto.name.substring(googleSearch.length) }}</b>
+                        </ul>
                     </div>
                 </div>
                 <div class="przyciski">
                     <div class="buttons">
-                        <button class="przycisk1" type="button" onclick="location.href=''">Szukaj w Google</button>
+                        <button class="przycisk1" @click="potwierdz" type="button">Szukaj w Google</button>
                         <button class="przycisk2" type="button" onclick="location.href=''">Szczęśliwy traf</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dol">
-            <div class="lista">
-                <ul v-for="miasto in filtredCities">
-                    {{miasto.name}}
-                </ul>
-            </div>
             <div class="apki">
                 <svg class="ikonka" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
                     <path fill='rgba(0,0,0,.54)'
@@ -274,14 +277,26 @@
             var app = new Vue({
                 el: "#app",
                 data: {
-                    googleSearch: "",
+                    googleSearch:"",
+                    wyszukaj:"",
                     cities: window.cities,
                 },
                 computed: {
                     filtredCities() {
-                        let result = this.cities.filter(miasto => miasto.name.includes(this.googleSearch));
-                        return result.slice(0, 10);
+                        let result = this.cities.filter(miasto => miasto.name.startsWith(this.googleSearch) || miasto.name.toLowerCase().startsWith(this.googleSearch));
+                        if (this.googleSearch.length > 0) {
+                            return result.slice(0, 10);
+                        }
                     }
+                },
+                methods: {
+                    potwierdz() {
+                        this.wyszukaj = this.googleSearch
+                    },
+                    uzupelnij(miasto) {
+                        this.googleSearch = miasto.name;
+                        this.wyszukaj = this.googleSearch;
+                    },
                 }
             })
         </script>
