@@ -23,6 +23,11 @@ html, body
     display: none;
 }
 
+.niepokaz
+{
+    display: none;
+}
+
 .ilosc_wynikow
 {
     display: none;
@@ -155,6 +160,7 @@ a
 .google
 {
     max-height: 92px;
+    cursor: pointer;
 }
 
 .wyszukiwanie

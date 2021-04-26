@@ -20,9 +20,9 @@ div#app.results
     display: none;
 }
 
-.results .lista
+.results .niepokaz
 {
-    display: none;;
+    display: none;
 }
 .results .przyciski
 {
@@ -178,14 +178,57 @@ div#app.results
 .results .tekst
 {
     background: #fff;
-    display: flex;
     border: 1px solid #dfe1e5;
     box-shadow: none;
     border-radius: 24px;
     z-index: 3;
+    padding-bottom: 5px;
+    display: flex;
     height: 44px;
     margin: 0 auto;
     width: 690px;
+}
+
+.results .lista
+{
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(32,33,36,.28);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 24px;
+    width: 670px;
+}
+
+.results ul
+{
+    display: block;
+    padding: 10px;
+    padding-left: 15px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.results ul:hover,
+.results ul:focus 
+{
+    box-shadow: 0 0 0.3em 0.1em #d9d9d9;
+}
+
+.results b
+{
+    font-weight: bold;
+}
+.results ul img.lupa
+{
+    padding: 0;
+    padding-top: 5px;
+    padding-right: 10px;
+    height: 20px;
+    width: 20px;
 }
 
 .results .ilosc_wynikow

@@ -30,10 +30,10 @@
         </div>
         <div class="main">
             <div class="logo">
-                <img class="google" src="logo.png">
+                <img class="google" src="logo.png" onclick="location.href=''">
             </div>
             <div class="wyszukiwanie">
-                <div class="rozwiniety">
+                <div class="rozwiniety" @click="rozwin()">
                     <div class="tekst">
                         <div class="visual1">
                             <img class="lupa" src="lupa.png" @click="potwierdz" title="Szukaj">
@@ -42,7 +42,7 @@
                             <img class="mikro" src="mikro.png" title="Wyszukiwanie głosowe">
                         </div>
                     </div>
-                    <div class="lista">
+                    <div :class="[pokaz == 1 ? 'lista' : 'niepokaz']">
                         <ul v-for="miasto in filtredCities" @click="uzupelnij(miasto)">
                             <img class="lupa" src="lupa.png" title="Szukaj">
                             {{googleSearch}}<b>{{ miasto.name.substring(googleSearch.length) }}</b>
@@ -280,6 +280,7 @@
                     googleSearch:"",
                     wyszukaj:"",
                     cities: window.cities,
+                    pokaz: 0,
                 },
                 computed: {
                     filtredCities() {
@@ -291,11 +292,18 @@
                 },
                 methods: {
                     potwierdz() {
-                        this.wyszukaj = this.googleSearch
+                        
+                        this.wyszukaj = this.googleSearch;
+                        this.pokaz = 0;
                     },
                     uzupelnij(miasto) {
+                        
                         this.googleSearch = miasto.name;
                         this.wyszukaj = this.googleSearch;
+                        this.pokaz = 0;
+                    },
+                    rozwin() {
+                        this.pokaz = 1;
                     },
                 }
             })
