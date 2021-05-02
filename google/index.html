@@ -277,10 +277,11 @@
             var app = new Vue({
                 el: "#app",
                 data: {
-                    googleSearch:"",
-                    wyszukaj:"",
+                    googleSearch: "",
+                    wyszukaj: "",
                     cities: window.cities,
                     pokaz: 0,
+                    licznik: 0,
                 },
                 computed: {
                     filtredCities() {
@@ -290,20 +291,43 @@
                         }
                     }
                 },
+                watch: {
+                    strzalki() {
+                        if(googleSearch.length()>0){
+                            document.addEventListener('keydown', this.wdol);
+                            document.lista.addEventListener('keyup', this.wgore);
+                        }
+                    }
+                },
                 methods: {
                     potwierdz() {
-                        
+
                         this.wyszukaj = this.googleSearch;
                         this.pokaz = 0;
                     },
                     uzupelnij(miasto) {
-                        
+
                         this.googleSearch = miasto.name;
                         this.wyszukaj = this.googleSearch;
                         this.pokaz = 0;
                     },
                     rozwin() {
                         this.pokaz = 1;
+                    },
+                    wdol(){
+                        licznik++;
+                        if(!licznik==lista.length){
+                        this.googleSearch = this.miasto[licznik].name;
+                        // tu jakiś hover
+                        }
+                    },
+                    wgore(){
+                        licznik--;
+                        if(!licznik==0){
+                        licznik++;
+                        this.googleSearch = this.miasto[licznik].name;
+                        // tu jakiś hover
+                        }
                     },
                 }
             })
