@@ -6,8 +6,10 @@
     <title>Google</title>
     <link rel="stylesheet" href="google.css">
     <link rel="stylesheet" href="googleWyniki.css">
+    <link rel="stylesheet" href="autocompleter.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="cities.js"></script>
+    <script src="autocompleter.js"></script>
 </head>
 
 <body>
@@ -37,6 +39,7 @@
                     <div class="tekst">
                         <div class="visual1">
                             <img class="lupa" src="lupa.png" @click="potwierdz" title="Szukaj">
+                            <!-- <v-autocompleter :options="cities" @enter="potwierdz"></v-autocompleter> -->
                             <input v-model="googleSearch" @keyup.enter="potwierdz" type="search">
                             <img class="klaw" src="klawiatura.png" title="Narzędzia do wprowadzania tekstu">
                             <img class="mikro" src="mikro.png" title="Wyszukiwanie głosowe">
@@ -273,65 +276,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            var app = new Vue({
-                el: "#app",
-                data: {
-                    googleSearch: "",
-                    wyszukaj: "",
-                    cities: window.cities,
-                    pokaz: 0,
-                    licznik: 0,
-                },
-                computed: {
-                    filtredCities() {
-                        let result = this.cities.filter(miasto => miasto.name.startsWith(this.googleSearch) || miasto.name.toLowerCase().startsWith(this.googleSearch));
-                        if (this.googleSearch.length > 0) {
-                            return result.slice(0, 10);
-                        }
-                    }
-                },
-                watch: {
-                    strzalki() {
-                        if(googleSearch.length()>0){
-                            document.addEventListener('keydown', this.wdol);
-                            document.lista.addEventListener('keyup', this.wgore);
-                        }
-                    }
-                },
-                methods: {
-                    potwierdz() {
-
-                        this.wyszukaj = this.googleSearch;
-                        this.pokaz = 0;
-                    },
-                    uzupelnij(miasto) {
-
-                        this.googleSearch = miasto.name;
-                        this.wyszukaj = this.googleSearch;
-                        this.pokaz = 0;
-                    },
-                    rozwin() {
-                        this.pokaz = 1;
-                    },
-                    wdol(){
-                        licznik++;
-                        if(!licznik==lista.length){
-                        this.googleSearch = this.miasto[licznik].name;
-                        // tu jakiś hover
-                        }
-                    },
-                    wgore(){
-                        licznik--;
-                        if(!licznik==0){
-                        licznik++;
-                        this.googleSearch = this.miasto[licznik].name;
-                        // tu jakiś hover
-                        }
-                    },
-                }
-            })
-        </script>
     </div>
 </body>
 
