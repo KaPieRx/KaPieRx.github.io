@@ -46,7 +46,8 @@ div#vapp.results
     grid-row: 1;
     padding: 4px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-self: flex-start;
 }
 
 .results .ikony

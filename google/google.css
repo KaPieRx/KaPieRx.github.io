@@ -209,9 +209,9 @@ input
     cursor: pointer;
 }
 
-.autocom .result-city:active
+.autocom .result-city.active
 {
-    background-color: #b3bfca;
+    background-color: #e1e6eb;
 }
 
 span
