@@ -5,13 +5,13 @@
     font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
 }
 
-div#app.results
+div#vapp.results
 {
     margin: 0;
     max-width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 70px 50px 50px 1fr 1fr;
+    grid-template-rows: 1fr 50px 50px 1fr 1fr;
     row-gap: 0
 }
 
@@ -20,10 +20,6 @@ div#app.results
     display: none;
 }
 
-.results .niepokaz
-{
-    display: none;
-}
 .results .przyciski
 {
     display: none;
@@ -49,6 +45,8 @@ div#app.results
     grid-column: 2;
     grid-row: 1;
     padding: 4px;
+    display: flex;
+    flex-direction: row;
 }
 
 .results .ikony
@@ -171,7 +169,7 @@ div#app.results
 
 .results .wyszukiwanie
 {
-    display: inline-block;
+    display: flex;
     padding: 14px 180px 4px 50px;
 }
 
@@ -187,20 +185,6 @@ div#app.results
     height: 44px;
     margin: 0 auto;
     width: 690px;
-}
-
-.results .lista
-{
-    position: absolute;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(32,33,36,.28);
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border-radius: 24px;
-    width: 670px;
 }
 
 .results .ilosc_wynikow
@@ -265,6 +249,14 @@ div#app.results
     padding-bottom: 10px;
     order: 4;
     cursor: pointer;
+}
+
+.results .autocom
+{
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    z-index: 3;
 }
 
 .results input
