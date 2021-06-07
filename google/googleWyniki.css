@@ -68,6 +68,11 @@ div#vapp.results
     font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
 }
 
+.results .bold 
+{
+    font-weight: bold;
+}
+
 .results .zalogujsie
 {
     display: inline-block;

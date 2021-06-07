@@ -35,7 +35,7 @@
                 <img class="google" src="logo.png" onclick="location.href=''">
             </div>
             <div class="wyszukiwanie">
-                <v-autocompleter v-model="googleSearch" :options="cities" @enter="potwierdz()"></v-autocompleter>
+                <v-autocompleter v-model="googleSearch" :options="cities" @enter="potwierdz"></v-autocompleter>
                 <div class="przyciski">
                     <div class="buttons">
                         <button class="przycisk1" @click="potwierdz()" type="button">Szukaj w Google</button>
@@ -273,83 +273,8 @@
                 this.wyszukaj = this.googleSearch;
             }
         }
-    });</script>
-    <!-- <script type="text/javascript">
-        var app = new Vue({
-            el: "#vapp",
-            data: {
-                isOnResults: false,
-                googleSearch: "",
-                wyszukaj: "",
-                cities: window.cities.map((cityData) => {
-                    cityData.nameLowerCase = cityData.name.toLowerCase();
-                    return cityData;
-                }),
-                pokaz: false,
-                filteredCities: [],
-                podswietlony: 0,
-            },
-
-            watch: {
-                googleSearch() {
-                    if (this.pokaz) {
-                        return;
-                    }
-                    if (this.googleSearch.length === 0) {
-                        filteredCities = [];
-                        return;
-                    }
-                    let returnedCities = [];
-                    let searchLowerCase = this.googleSearch.toLowerCase();
-
-                    this.cities.forEach((cityData) => {
-                        if (returnedCities.length === 10 || !cityData.nameLowerCase.includes(searchLowerCase)) {
-                            return;
-                        }
-                        returnedCities.push({
-                            name: cityData.name,
-                            nameHtml: cityData.nameLowerCase.replace(searchLowerCase, (match) => {
-                                return '<span class="bold">' + match + '</span>';
-                            })
-                        })
-                    });
-
-                    this.filteredCities = returnedCities;
-                }
-            },
-            methods: {
-                goTo(index) {
-                    if (!this.pokaz) {
-                        index = 0;
-                    }
-
-                    if (index > this.filteredCities.length - 1) {
-                        index = 0;
-                    } else if (index < 0) {
-                        index = this.filteredCities.length - 1;
-                    }
-
-                    this.pokaz = true;
-                    this.podswietlony = index;
-                    this.googleSearch = this.filteredCities[index].name;
-                },
-                potwierdz(name) {
-                    this.pokaz = true;
-
-                    if (name) {
-                        this.googleSearch = name;
-                    }
-
-                    this.isOnResults = true;
-                    this.wyszukaj = this.googleSearch;
-                    this.filteredCities = [];
-                    this.$nextTick(() => {
-                        this.pokaz = false;
-                    });
-                },
-            }
-        })
-    </script> -->
+    });
+    </script>
 </body>
 
 </html>
