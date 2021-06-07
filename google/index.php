@@ -6,10 +6,8 @@
     <title>Google</title>
     <link rel="stylesheet" href="google.css">
     <link rel="stylesheet" href="googleWyniki.css">
-    <link rel="stylesheet" href="autocompleter.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="cities.js"></script>
-    <script src="autocompleter.js"></script>
 </head>
 
 <body>
@@ -35,7 +33,20 @@
                 <img class="google" src="logo.png" onclick="location.href=''">
             </div>
             <div class="wyszukiwanie">
-                <v-autocompleter v-model="googleSearch" :options="cities" @enter="potwierdz"></v-autocompleter>
+                <div class="autocom">
+                    <div class="tekst">
+                            <img class="lupa" src="lupa.png" @click="potwierdz()" title="Szukaj">
+                            <input v-model="googleSearch" @keyup.enter="potwierdz()"
+                                @keyup.down="goTo(podswietlony + 1)" @keyup.up="goTo(podswietlony - 1)" type="text">
+                            <img class="klaw" src="klawiatura.png" title="Narzędzia do wprowadzania tekstu">
+                            <img class="mikro" src="mikro.png" title="Wyszukiwanie głosowe">
+                    </div>
+                    <div class="result-city" v-for="(city, index) in filteredCities"
+                        :class="{active : pokaz && podswietlony === index}" @click="potwierdz(city.name)">
+                        <img class="lupa" src="lupa.png" title="Szukaj">
+                        <span v-html="city.nameHtml"></span>
+                    </div>
+                </div>
                 <div class="przyciski">
                     <div class="buttons">
                         <button class="przycisk1" @click="potwierdz()" type="button">Szukaj w Google</button>
@@ -261,19 +272,95 @@
             </div>
         </div>
     </div>
-    <script>var app = new Vue({
-        el: "#vapp",
-        data: {
-            googleSearch: "",
-            wyszukaj: "",
-            cities: window.cities,
-        },
-        methods: {
-            potwierdz() {
-                this.wyszukaj = this.googleSearch;
-            }
-        }
-    });
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#vapp",
+            data: {
+                googleSearch: "",
+                wyszukaj: "",
+                cities: window.cities.map((cityData) => {
+                    cityData.nameLowerCase = cityData.name.toLowerCase();
+                    return cityData;
+                }),
+                pokaz: false,
+                filteredCities: [],
+                podswietlony: 0,
+                results: [],
+            },
+
+            watch: {
+                googleSearch() {
+                    if (this.pokaz) {
+                        return;
+                    }
+                    if (this.googleSearch.length === 0) {
+                        filteredCities = [];
+                        return;
+                    }
+                    let returnedCities = [];
+                    let searchLowerCase = this.googleSearch.toLowerCase();
+
+                    this.cities.forEach((cityData) => {
+                        if (returnedCities.length === 10 || !cityData.nameLowerCase.includes(searchLowerCase)) {
+                            return;
+                        }
+                        returnedCities.push({
+                            name: cityData.name,
+                            nameHtml: cityData.nameLowerCase.replace(searchLowerCase, (match) => {
+                                return '<span class="bold">' + match + '</span>';
+                            })
+                        })
+                    });
+
+                    this.filteredCities = returnedCities;
+                }
+            },
+            methods: {
+                goTo(index) {
+                    if (!this.pokaz) {
+                        index = 0;
+                    }
+
+                    if (index > this.filteredCities.length - 1) {
+                        index = 0;
+                    } else if (index < 0) {
+                        index = this.filteredCities.length - 1;
+                    }
+
+                    this.pokaz = true;
+                    this.podswietlony = index;
+                    this.googleSearch = this.filteredCities[index].name;
+                },
+                potwierdz(name) {
+                    this.pokaz = true;
+
+                    if (name) {
+                        this.googleSearch = name;
+                    }
+
+                    this.wyszukaj = this.googleSearch;
+                    this.filteredCities = [];
+                    this.$nextTick(() => {
+                        this.pokaz = false;
+                    });
+                },
+                findResultsDebounced : Cowboy.debounce(100, function findResultsDebounced() {
+                    console.log('Fetch: ', this.googleSearch);
+                    console.log(`http://localhost:8080/search?name=${this.googleSearch}`);
+                    fetch(`http://localhost:8080/search?name=${this.googleSearch}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log('Data: ', data);
+                            this.results = data;
+                            app.$refs.bottom.$forceUpdate();
+                        });
+                }),
+                inputFunc:function(ev){
+                    this.googleSearch=ev;
+                    this.findResultsDebounced();
+                }
+            },
+        })
     </script>
 </body>
 
